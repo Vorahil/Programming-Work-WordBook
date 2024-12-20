@@ -9,7 +9,7 @@
 void AddWord::addWord() {
     string input;
     Word wordbook[MAX];
-    char filename[MAX] = "C:/CodeWork/C/Programming/resource/WordBook";
+    char filename[MAX] = "../../resource/WordBook";
     char word[MAX], partOfSpeech[MAX], meaning[MAX];
     int wordCount = readFileReturnId(filename, wordbook);
     do {
@@ -103,7 +103,7 @@ void AddWord::addWord() {
 
         string filename(wordbook[wordCount].getWord());
         string filenamePath = filename+".txt";
-        string fullPath = "C:/CodeWork/C/Programming/resource/WordBook"; // 完整路径
+        string fullPath = "../../resource/WordBook"; // 完整路径
 
         // 在新目录中创建并写入文件
         if (addWordToFile(fullPath,filenamePath,wordbook,wordCount)){

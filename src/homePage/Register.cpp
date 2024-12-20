@@ -12,16 +12,21 @@
 int Register::registerUserReturnIndex()
 {
     string input;
+    string ct="0-0-0";
     Customer user[MAX];
-    char filename[MAX]=R"(C:/CodeWork/C/Programming/resource/users.txt)";
+    char username[MAX], password[MAX],clockTime[MAX];
+
+    char filename[MAX]=R"(../../resource/users.txt)";
+
     int userCount=Login::ReadUsersInf(filename, user);
-    char username[MAX], password[MAX];
+
     cout<<"输入你的姓名"<<endl;
     getline(cin,input);
     strcpy(username,input.c_str());
     cout<<"输入密码"<<endl;
     getline(cin,input);
     strcpy(password,input.c_str());
+    strcpy(clockTime,ct.c_str());
     // 检查用户名是否已经存在
     for (int i = 0; i < userCount; i++) {
         if (strcmp(user[i].getUsersName(), username) == 0) {
@@ -34,15 +39,16 @@ int Register::registerUserReturnIndex()
     user[userCount].setUsersName(username);
     user[userCount].setPassword(password);
     user[userCount].setScore(0);
+    user[userCount].setUsersName(clockTime);
     // 将新用户信息写入文件
-    FILE *fp = fopen("C:/CodeWork/C/Programming/resource/users.txt", "a"); // 打开文件以追加模式写入
+    FILE *fp = fopen("../../resource/users.txt", "a"); // 打开文件以追加模式写入
     if (!fp) {
         cout<<"打开要写入的用户文件时出错"<<endl;
         return -1;
     }
 
     // 写入用户数据到文件
-    fprintf(fp, "%s %s %d\n", username, password,0);
+    fprintf(fp, "%s %s %d %s\n", username, password,0,clockTime);
     fclose(fp);
 
     createFolder("C:/CodeWork/C/Programming/resource/wrongBook",username);

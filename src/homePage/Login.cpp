@@ -13,7 +13,8 @@ int Login::getUserIndex() {
     cout<<"进入"<<endl;
     string input;
     Customer user[MAX];
-    char filename[MAX]="C:/CodeWork/C/Programming/resource/users.txt";
+    char filename[MAX]="../../resource/users.txt";
+
     int UserCount=ReadUsersInf(filename, user);
 //    文件不存在，直接退出
     if (UserCount==-1){
@@ -37,29 +38,33 @@ int Login::getUserIndex() {
     return -1;
 }
 
-//读取文件,返回最后一个用户的下标
+//读取文件,返回最后一个用户下一个的下标
 int Login::ReadUsersInf(char* fname, Customer Inf[])
 {
     int i=0;
     char usersname[MAX];
     char password[MAX];
+    char clockTime[MAX];
     int score=0;
     ifstream file(fname);
     string line;
 
+
     if (file.is_open()) {
         while (getline(file, line)) {
             istringstream iss(line);
-            string user, pass;  // 临时string变量
+            string user, pass,ct;  // 临时string变量
 
-            if (iss >> user >> pass >> score) {
+            if (iss >> user >> pass >> score >>ct) {
                 // 将string复制到char数组
                 strcpy(usersname, user.c_str());
                 strcpy(password, pass.c_str());
+                strcpy(clockTime, ct.c_str());
             }
             Inf[i].setUsersName(usersname);
             Inf[i].setPassword(password);
             Inf[i].setScore(score);
+            Inf[i].setClockTime(clockTime);
             i++;
         }
         file.close();

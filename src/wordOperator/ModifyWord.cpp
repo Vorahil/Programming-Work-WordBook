@@ -19,7 +19,7 @@ void ModifyWord::modifyWord() {
         cout << "输入有效内容" << endl;
     }
 
-    char dirname[MAX] = "C:/CodeWork/C/Programming/resource/WordBook";
+    char dirname[MAX] = "../../resource/WordBook";
     int wordCount = AddWord::readFileReturnId(dirname, wordBook);
     for (int i = 0; i < wordCount; i++) {
         if (strcmp(wordBook[i].getWord(), word) == 0) {
@@ -96,7 +96,7 @@ void ModifyWord::modifyWord() {
             // 在新目录中创建并写入文件
             string filename(wordBook[i].getWord());
             string filenamePath = filename + ".txt";
-            string fullPath = "C:/CodeWork/C/Programming/resource/WordBook"; // 完整路径
+            string fullPath = "../../resource/WordBook"; // 完整路径
 
             if (AddWord::addWordToFile(fullPath, filenamePath, wordBook, i)) {
                 cout << "写入成功" << endl;

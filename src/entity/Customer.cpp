@@ -26,3 +26,11 @@ void Customer::setScore(int score) {
 int Customer::getTotalScore() {
     return this->score;
 }
+
+void Customer::setClockTime(const char *ClockTime) {
+    strcpy(this->ClockTime,ClockTime);
+}
+
+char *Customer::getClockTime() {
+    return this->ClockTime;
+}

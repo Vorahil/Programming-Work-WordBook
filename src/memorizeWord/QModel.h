@@ -13,13 +13,16 @@
 #include "random"
 #include "../entity/Word.h"
 #include "../entity/Customer.h"
+#include "../homePage/Login.h"
 using namespace std;
 class QModel{
 private:
-
+    static void reviewWord(int userId);
 public:
     static void questionChoose(int i);
-    static void toWrongBook(string fullPath, string filenamePath,Word word);
-    static int readFromWrongBookReturnCount(const filesystem::path &dirPath, Word words[])
+    static int toWrongBook(string fullPath, string filenamePath,Word word);
+    static int readFromWrongBookReturnCount(const filesystem::path &dirPath, Word words[]);
+    static void review(int userId);
+    static int changeUserScore(string filePath,Customer users[],int userCount);
 };
 #endif //PROGRAMMING_QMODEL_H

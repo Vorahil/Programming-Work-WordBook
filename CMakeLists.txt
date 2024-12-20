@@ -27,4 +27,6 @@ add_executable(Programming src/main.cpp
         src/memorizeWord/BlankQ.cpp
         src/memorizeWord/QModel.cpp
         src/memorizeWord/QModel.h
+        src/homePage/UserData.h
+        src/homePage/UserData.cpp
 )

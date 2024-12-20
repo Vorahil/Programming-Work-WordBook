@@ -17,8 +17,8 @@ void DeleteWord::deleteWord() {
         cout<<"输入有效内容"<<endl;
     }
 
-    char dirname[MAX]="C:/CodeWork/C/Programming/resource/WordBook";
-    char filename[MAX]="C:/CodeWork/C/Programming/resource/WordBook";
+    char dirname[MAX]="../../resource/WordBook";
+    char filename[MAX]="../../resource/WordBook";
     strcat(filename,"/");
     strcat(filename,word);
     strcat(filename,".txt");
