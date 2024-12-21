@@ -3,9 +3,11 @@
 //
 
 #include "ChoiceQ.h"
-#include "../entity/Customer.h"
-#include "../homePage/Login.h"
 
+/**
+ * 选择提示释义还是单词
+ * @param i 用户ID
+ */
 void ChoiceQ::chooseWay(int i) {
     string input;
     int choice;
@@ -35,7 +37,10 @@ void ChoiceQ::chooseWay(int i) {
     } while (choice);
 }
 
-//单词具体操作
+/**
+ * 单词选择题具体操作
+ * @param userId 用户ID
+ */
 void ChoiceQ::operateWordQ(int userId) {
     int tscore = 0;
     Customer users[MAX];
@@ -174,6 +179,10 @@ int ChoiceQ::wordChoiceQ(int userId) {
     return ifAnswerIsRight;
 }
 
+/**
+ *选项是释义的具体操作
+ * @param userId 用户ID
+ */
 void ChoiceQ::operateMeaningQ(int userId) {
     int tscore = 0;
     Customer users[MAX];
@@ -311,7 +320,11 @@ int ChoiceQ::meaningChoiceQ(int userId) {
     return ifAnswerIsRight;
 }
 
-//读取用户文件并写入分数
+/**
+ * 写入分数
+ * @param ifAnswerIsRight 是否正确
+ * @param i 用户ID
+ */
 void ChoiceQ::operateScore(int ifAnswerIsRight, int i) {
     Customer users[MAX];
     int score;

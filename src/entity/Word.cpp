@@ -1,7 +1,7 @@
 //
 // Created by TairanLiu on 24-12-17.
 //
-#include <cstring>
+
 #include "Word.h"
 
 void Word::setWord(const char *word) {

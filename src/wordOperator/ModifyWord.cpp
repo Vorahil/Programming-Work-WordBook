@@ -3,6 +3,9 @@
 //
 #include "ModifyWord.h"
 
+/**
+ * 修改单词
+ */
 void ModifyWord::modifyWord() {
     Word wordBook[MAX];
     char word[MAX];

@@ -3,6 +3,10 @@
 //
 #include "QModel.h"
 
+/**
+ * 选择填空还是选择题
+ * @param i 用户ID
+ */
 void QModel::questionChoose(int i) {
     string input;
     int choice;
@@ -56,7 +60,12 @@ int QModel::toWrongBook(string fullPath, string filenamePath,Word word) {
     }
 }
 
-//读取错题本
+/**
+ * 读取错题本
+ * @param dirPath 目录地址
+ * @param words 单词数组
+ * @return 返回错题本单词总数
+ */
 int QModel::readFromWrongBookReturnCount(const filesystem::path &dirPath, Word words[]) {
     int wordCount = 0;
     char word[MAX];
@@ -105,7 +114,10 @@ int QModel::readFromWrongBookReturnCount(const filesystem::path &dirPath, Word w
 
 
 
-//复习界面
+/**
+ * 复习的交互界面
+ * @param userId 用户ID
+ */
 void QModel::review(int userId) {
     string input;
     int flag;
@@ -127,7 +139,10 @@ void QModel::review(int userId) {
     } while (!flag);
 }
 
-//复习单词的具体操作
+/**
+ * 复习具体操作
+ * @param userId 用户ID
+ */
 void QModel::reviewWord(int userId) {
     int wrongWordNum=0;
     int userCount=0;
@@ -168,7 +183,13 @@ void QModel::reviewWord(int userId) {
     }
 }
 
-//写入分数到文本记录
+/**
+ * 写入分数至地址
+ * @param filePath 文件地址
+ * @param users 用户数组
+ * @param userCount 用户总数
+ * @return 是否写入成功
+ */
 int QModel::changeUserScore(string filePath, Customer *users,int userCount) {
     ofstream file(filePath);
     if (!file.is_open()) {

@@ -3,6 +3,9 @@
 //
 #include "DeleteWord.h"
 
+/**
+ * 删除单词
+ */
 void DeleteWord::deleteWord() {
     Word wordBook[MAX];
     char word[MAX];

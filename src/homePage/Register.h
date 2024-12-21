@@ -11,6 +11,7 @@ using namespace std;
 class Register{
 public:
  static int registerUserReturnIndex();
+private:
  static void createFolder(const string& basePath, const string& newFolderName);
 };
 #endif //PROGRAMMING_REGISTER_H

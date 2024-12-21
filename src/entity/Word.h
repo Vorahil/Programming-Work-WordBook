@@ -4,6 +4,7 @@
 
 #ifndef PROGRAMMING_WORD_H
 #define PROGRAMMING_WORD_H
+#include <cstring>
 class Word{
 public:
     void setWord(const char* word);

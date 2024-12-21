@@ -3,6 +3,9 @@
 //
 #include "ViewWords.h"
 
+/**
+ * 查看单词本
+ */
 void ViewWords::viewWords() {
     Word wordBook[MAX];
     char dirname[MAX]="../../resource/WordBook";

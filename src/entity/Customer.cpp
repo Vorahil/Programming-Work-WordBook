@@ -1,7 +1,7 @@
 //
 // Created by TairanLiu on 24-12-17.
 //
-#include <cstring>
+
 #include "Customer.h"
 
 char *Customer::getUsersName() {

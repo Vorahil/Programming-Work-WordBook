@@ -7,12 +7,13 @@
 #include "QModel.h"
 
 class BlankQ{
-public:
+private:
     static void operateWordQ(int userId);
     static void operateMeaningQ(int userId);
-    static void chooseWay(int i);
     static int wordBlankQ(int userId);
     static int meaningBlankQ(int userId);
     static void operateScore(int ifAnswerIsRight, int i);
+public:
+    static void chooseWay(int i);
 };
 #endif //PROGRAMMING_BLANKQ_H

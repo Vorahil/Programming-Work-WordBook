@@ -5,7 +5,7 @@
 #ifndef PROGRAMMING_CUSTOMER_H
 #define PROGRAMMING_CUSTOMER_H
 #define MAX 10000
-
+#include <cstring>
 class Customer{
     private:
         char UsersName[MAX];

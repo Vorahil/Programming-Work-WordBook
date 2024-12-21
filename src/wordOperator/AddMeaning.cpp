@@ -3,6 +3,9 @@
 //
 #include "AddMeaning.h"
 
+/**
+ * 添加释义
+ */
 void AddMeaning::addMeaning() {
     Word wordBook[MAX];
     char word[MAX];

@@ -69,6 +69,7 @@ void chooseModel(int i) {
     do {
         cout << "1.打开单词本" << endl;
         cout << "2.开始背单词" << endl;
+        cout << "3.打卡" << endl;
         cout << "0.退出并打卡" << endl;
         getline(cin, input);
         choice = stoi(input);
@@ -78,6 +79,9 @@ void chooseModel(int i) {
                 break;
             case 2:
                 memorizeWord(i);
+                break;
+            case 3:
+                UserData::clock(i);
                 break;
             case 0:
                 UserData::clock(i);

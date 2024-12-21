@@ -8,9 +8,10 @@
 
 class ChoiceQ{
 public:
+    static void chooseWay(int i);
+private:
     static void operateWordQ(int userId);
     static void operateMeaningQ(int userId);
-    static void chooseWay(int i);
     static int wordChoiceQ(int userId);
     static int meaningChoiceQ(int userId);
     static void operateScore(int ifAnswerIsRight, int i);

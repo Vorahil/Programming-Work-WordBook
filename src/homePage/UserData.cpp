@@ -2,6 +2,10 @@
 // Created by TairanLiu on 24-12-20.
 //
 #include "UserData.h"
+/**
+ * 查看总分
+ * @param userId 用户ID
+ */
 void UserData::checkScore(int userId) {
     char filename[MAX]="../../resource/users.txt";
     Customer users[MAX];
@@ -9,6 +13,10 @@ void UserData::checkScore(int userId) {
     cout<<"你的总分是"<<users[userId].getTotalScore()<<endl;
 }
 
+/**
+ * 查看错题本
+ * @param userId 用户ID
+ */
 void UserData::checkWrongBook(int userId) {
     Word wrongWordBook[MAX];
     string wrongBookDir;
@@ -31,6 +39,10 @@ void UserData::checkWrongBook(int userId) {
     }
 }
 
+/**
+ * 打卡
+ * @param userId 用户ID
+ */
 void UserData::clock(int userId) {
     char filename[MAX]="../../resource/users.txt";
     Customer users[MAX];
@@ -58,7 +70,13 @@ void UserData::clock(int userId) {
     }
 }
 
-//返回值表示是否写入成功
+/**
+ * 改变打卡时间至文本文件
+ * @param filePath 地址
+ * @param users 用户数组
+ * @param userCount 用户总数
+ * @return 是否写入成功
+ */
 int UserData::changeClockTime(string filePath, Customer *users,int userCount) {
     ofstream file(filePath);
     if (!file.is_open()) {

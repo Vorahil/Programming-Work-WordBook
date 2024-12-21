@@ -2,7 +2,11 @@
 // Created by TairanLiu on 24-12-18.
 //
 #include "BlankQ.h"
-#include "../homePage/Login.h"
+
+/**
+ * 选择提示单词还是释义
+ * @param i 用户ID
+ */
 void BlankQ::chooseWay(int i) {
     string input;
     int choice;
@@ -32,7 +36,10 @@ void BlankQ::chooseWay(int i) {
     } while (choice);
 }
 
-//单词具体操作
+/**
+ * 录入是单词的具体操作
+ * @param userId 用户ID
+ */
 void BlankQ::operateWordQ(int userId) {
     int tscore = 0;
     Customer users[MAX];
@@ -61,7 +68,7 @@ void BlankQ::operateWordQ(int userId) {
 }
 
 /**
- * 单词选择题，并录入错题本
+ * 单词填空题，并录入错题本
  * @param userId 用户ID
  * @return 正确的返回1，错误返回0
  */
@@ -121,6 +128,10 @@ int BlankQ::wordBlankQ(int userId) {
     return ifAnswerIsRight;
 }
 
+/**
+ * 录入是释义的具体操作
+ * @param userId 用户ID
+ */
 void BlankQ::operateMeaningQ(int userId) {
     int tscore = 0;
     Customer users[MAX];
@@ -148,7 +159,7 @@ void BlankQ::operateMeaningQ(int userId) {
     QModel::review(userId);
 }
 /**
- * 释义选择题，录入错题本
+ * 释义填空题，录入错题本
  * @param userId 用户ID
  * @return 正确返回1，错误返回0
  */
@@ -208,7 +219,11 @@ int BlankQ::meaningBlankQ(int userId) {
     return ifAnswerIsRight;
 }
 
-//读取用户文件并写入分数
+/**
+ * 写入分数至文本
+ * @param ifAnswerIsRight 回答是否正确
+ * @param i 用户ID
+ */
 void BlankQ::operateScore(int ifAnswerIsRight, int i) {
     Customer users[MAX];
     int score;
